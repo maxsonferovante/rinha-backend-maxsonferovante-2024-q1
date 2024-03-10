@@ -11,10 +11,10 @@ from api.repository.client import ClientRepository
 
 
 errors = {
-    "invalid_transaction_body": Error(code=1, message="dados inválidos da transação"),
-    "client_not_found": Error(code=2, message="cliente não encontrado"),
+    "invalid_transaction_body": Error(code=1, message="dados invalidos da transacao"),
+    "client_not_found": Error(code=2, message="cliente nao encontrado"),
     "insufficient_balance": Error(code=3, message="saldo insuficiente"),
-    "url_not_found": Error(code=4, message="url não encontrada"),
+    "url_not_found": Error(code=4, message="url nao encontrada"),
 }
 
 class ClientService():

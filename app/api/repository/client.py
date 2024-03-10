@@ -13,10 +13,11 @@ class ClientRepository(metaclass = SingletonMeta):
     def get_client(self, client_id: int):
         with self.pool.connection() as conn:            
             with conn.cursor(row_factory=dict_row, binary=True) as cursor:                
-                row = cursor.execute("SELECT get_client(%(id)s)",{"id": client_id}, prepare=True).fetchone()                
-                if row is None:
-                    raise ClientNotFound()
-                return row
+                try:
+                    row = cursor.execute("SELECT get_client(%(id)s)",{"id": client_id}, prepare=True).fetchone()                
+                    return row
+                except RaiseException:
+                    raise ClientNotFound
             
     def add_transaction(self, client_id: int, transaction: Transaction):
          with self.pool.connection() as conn:
