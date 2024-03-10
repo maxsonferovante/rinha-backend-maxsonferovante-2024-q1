@@ -20,15 +20,7 @@ class Client(BaseModel):
     accont_limit: int = Field(alias="limite", ge=0)
     accont_balance: int = Field(alias="saldo", ge=0)
     transactions: list[Transaction] = Field(alias="ultimas_transacoes", default=[])
-
-    def deposit(self, transaction: Transaction):
-        self.balance += transaction.amount
-        self.transactions.append(transaction)
-
-    def withdraw(self, transaction: Transaction):
-        self.balance -= transaction.amount
-        self.transactions.append(transaction)
-    
+       
     @model_serializer
     def serialize_model(self):
         return {
