@@ -14,8 +14,11 @@ Projeto feito em Python para a rinha de backend 2024 q1.
 * Postgresql 16.
 * Nginx.
 
-Repositório: [https://github.com/maxsonferovante/rinha-backend-maxsonferovante-2024-q1](https://github.com/maxsonferovante/rinha-backend-maxsonferovante-2024-q1)
+Repositório da solução: [https://github.com/maxsonferovante/rinha-backend-maxsonferovante-2024-q1](https://github.com/maxsonferovante/rinha-backend-maxsonferovante-2024-q1)
+
+Repositório da rinha: [https://github.com/zanfranceschi/rinha-de-backend-2024-q1](https://github.com/zanfranceschi/rinha-de-backend-2024-q1)
 
 
-[@Github](https://github.com/maxsonferovante)
-[@Linkedin](https://www.linkedin.com/in/maxson-almeida/)
+Meus contatos:
+[Github](https://github.com/maxsonferovante)
+[Linkedin](https://www.linkedin.com/in/maxson-almeida/)
