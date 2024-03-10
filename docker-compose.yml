@@ -25,7 +25,6 @@ services:
           memory: "374MB"
 
   api1: &api
-    #image: quay.io/allisson/rinha-de-backend-2024-q1-python:latest
     build: .
     hostname: api1
     environment:
