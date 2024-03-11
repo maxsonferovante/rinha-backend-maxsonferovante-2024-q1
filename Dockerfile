@@ -1,6 +1,4 @@
-FROM python:3.11.7-slim-bookworm
-
-WORKDIR /app
+FROM python:3.11.7-slim-bookworm 
 
 # Install libpq and gcc
 RUN apt-get update && \
@@ -11,6 +9,8 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+WORKDIR /app
+
 # Install libpq
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -18,6 +18,9 @@ RUN apt-get update && \
         libpq5 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+COPY app ./app
+COPY .env  .
 
 
 RUN pip install --no-cache-dir --upgrade pip && \
@@ -27,8 +30,11 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app ./app
-COPY .env  .
+RUN useradd -m rinha && \
+    chown -R rinha /app
+
+WORKDIR /app
+USER rinha
 
 EXPOSE 8000
 
