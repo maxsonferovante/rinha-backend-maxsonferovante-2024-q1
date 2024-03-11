@@ -20,7 +20,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY app ./app
-COPY .env  .
+COPY .env  ./app
 
 
 RUN pip install --no-cache-dir --upgrade pip && \
